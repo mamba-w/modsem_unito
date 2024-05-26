@@ -1,0 +1,2632 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/"
+     xml:base="http://www.semanticweb.org/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:bag="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:giochi="http://www.semanticweb.org/giochi#"
+     xmlns:cpannotationschema="http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#"
+     xmlns:untitled-ontology-11="http://www.semanticweb.org/matteotancredi/ontologies/2023/7/untitled-ontology-11#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/giochi">
+        <owl:imports rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl"/>
+        <dc:creator xml:lang="it">Matteo Tancredi</dc:creator>
+        <dc:date>12/09/2023</dc:date>
+        <dc:description xml:lang="it">Ontologia relativa ai giochi da tavolo e ai videogiochi, contente informazioni alle persone che li hanno creati, ai personaggi presenti, al genere di questi giochi e alle piattaforme a supporto.</dc:description>
+        <dc:title xml:lang="it">Ontologia per gli appassionati di Giochi e Videogiochi</dc:title>
+        <vann:PreferredNamespacePrefix>vgo</vann:PreferredNamespacePrefix>
+        <vann:PreferredNamespaceUri>http://www.semanticweb.org/giochi#</vann:PreferredNamespaceUri>
+        <rdfs:label xml:lang="it">Ontologia di Giochi e Videogiochi</rdfs:label>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/date -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/date"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/description -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/title -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/PreferredNamespacePrefix -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/PreferredNamespacePrefix"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/PreferredNamespaceUri -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/PreferredNamespaceUri"/>
+    
+
+
+    <!-- http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled -->
+
+    <owl:AnnotationProperty rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/cp/owl/list.owl#nextItem -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/cp/owl/list.owl#nextItem">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#directlyPrecedes"/>
+        <owl:inverseOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#previousItem"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/cp/owl/list.owl#previousItem -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/cp/owl/list.owl#previousItem">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#directlyFollows"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#directlyFollows -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#directlyFollows"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#directlyPrecedes -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#directlyPrecedes"/>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#compostoDa -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/giochi#compostoDa">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/giochi#ComputerDaGaming"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/giochi#Lista_Pezzi_PC"/>
+        <rdfs:comment xml:lang="it">un PC da gaming è composto di una lista di pezzi</rdfs:comment>
+        <rdfs:label xml:lang="it">è composto da</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#haCasaProduttriceConsole -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/giochi#haCasaProduttriceConsole">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/giochi#produceConsole"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/giochi#Console"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/giochi#CasaProduttriceConsole"/>
+        <rdfs:comment xml:lang="it">Una console ha una casa produttrice</rdfs:comment>
+        <rdfs:label xml:lang="it">ha casa produttrice console</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#haCasaProduttriceGiocoDaTavolo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/giochi#haCasaProduttriceGiocoDaTavolo">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/giochi#produceGiocoDaTavolo"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/giochi#GiocoDaTavolo"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/giochi#CasaProduttriceGiocoDaTavolo"/>
+        <rdfs:comment xml:lang="it">Un gioco da tavolo ha una casa produttrice</rdfs:comment>
+        <rdfs:label xml:lang="it">ha casa produttrice gioco da tavolo</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#haCasaProduttricePcGaming -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/giochi#haCasaProduttricePcGaming">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/giochi#producePcGaming"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/giochi#ComputerDaGaming"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/giochi#CasaProduttricePC"/>
+        <rdfs:comment xml:lang="it">Un PC da gaming ha una casa produttrice</rdfs:comment>
+        <rdfs:label xml:lang="it">ha casa produttrice PC gaming</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#haCreatoGiocoCon -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/giochi#haCreatoGiocoCon">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:comment xml:lang="it">una persona ha creato un gioco con un&apos;altra persona</rdfs:comment>
+        <rdfs:label xml:lang="it">ha creato gioco con</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#haDifficolta -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/giochi#haDifficolta">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/giochi#Gioco"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/giochi#Difficolta"/>
+        <rdfs:comment xml:lang="it">un gioco ha una difficoltà</rdfs:comment>
+        <rdfs:label xml:lang="it">ha difficoltà</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#haEtaMaggiore -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/giochi#haEtaMaggiore">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:comment xml:lang="it">una persona è più grande di un&apos;altra persona</rdfs:comment>
+        <rdfs:label>ha età maggiore</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#haEtaMinore -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/giochi#haEtaMinore">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:comment xml:lang="it">una persona è più piccola di un&apos;altra persona</rdfs:comment>
+        <rdfs:label xml:lang="it">ha età minore</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#haGenere -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/giochi#haGenere">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/giochi#Gioco"/>
+        <rdfs:range rdf:resource="http://purl.org/net/VideoGameOntology#Genre"/>
+        <rdfs:comment xml:lang="it">un gioco ha un genere</rdfs:comment>
+        <rdfs:label xml:lang="it">ha genere</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#haModalita -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/giochi#haModalita">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/giochi#Gioco"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/giochi#ModalitaDiGioco"/>
+        <rdfs:comment xml:lang="it">un gioco ha una modalità</rdfs:comment>
+        <rdfs:label xml:lang="it">ha modalità</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#haPersonaggio -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/giochi#haPersonaggio">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/giochi#Videogioco"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/giochi#Personaggio"/>
+        <rdfs:comment xml:lang="it">un videogioco ha un personaggio</rdfs:comment>
+        <rdfs:label xml:lang="it">ha personaggio</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#haPiattaforma -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/giochi#haPiattaforma">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/giochi#Videogioco"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/giochi#Piattaforma"/>
+        <rdfs:comment xml:lang="it">un videogioco ha una piattaforma</rdfs:comment>
+        <rdfs:label xml:lang="it">ha piattaforma</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#haPortabilita -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/giochi#haPortabilita">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/giochi#Console"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/giochi#Portabilita"/>
+        <rdfs:comment xml:lang="it">una console ha una portabilità</rdfs:comment>
+        <rdfs:label xml:lang="it">ha portabilità</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#haSoftwareHouse -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/giochi#haSoftwareHouse">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/giochi#produceVideogioco"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/giochi#Videogioco"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/giochi#SoftwareHouse"/>
+        <rdfs:comment xml:lang="it">un videogioco ha una software house</rdfs:comment>
+        <rdfs:label xml:lang="it">ha Software House</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#haStessaEta -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/giochi#haStessaEta">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:comment xml:lang="it">due persone hanno la stessa età</rdfs:comment>
+        <rdfs:label xml:lang="it">ha stessa età</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#isAutoreDi -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/giochi#isAutoreDi">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/giochi#Gioco"/>
+        <rdfs:comment xml:lang="it">Una persona è autore di un gioco</rdfs:comment>
+        <rdfs:label xml:lang="it">è autore di</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#isCapoDi -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/giochi#isCapoDi">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:comment xml:lang="it">una persona è capo di un&apos;altra persona</rdfs:comment>
+        <rdfs:label xml:lang="it">è capo di</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#isCeoDi -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/giochi#isCeoDi">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/giochi#CEO"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/giochi#Azienda"/>
+        <rdfs:comment xml:lang="it">una persona è CEO di una azienda</rdfs:comment>
+        <rdfs:label xml:lang="it">è CEO di</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#isPersonaggioDi -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/giochi#isPersonaggioDi">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/giochi#Personaggio"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/giochi#Videogioco"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/giochi#isProtagonista"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/giochi#isSecondario"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/giochi#isVillain"/>
+        </owl:propertyChainAxiom>
+        <rdfs:comment xml:lang="it">Personaggio di un determinato videogioco</rdfs:comment>
+        <rdfs:label xml:lang="it">è personaggio di</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#isProtagonista -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/giochi#isProtagonista">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/giochi#Protagonista"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/giochi#Videogioco"/>
+        <rdfs:comment xml:lang="it">un personaggio è personaggio prostagonista di un videogioco</rdfs:comment>
+        <rdfs:label xml:lang="it">è protagonista di</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#isSecondario -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/giochi#isSecondario">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/giochi#Secondario"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/giochi#Videogioco"/>
+        <rdfs:comment xml:lang="it">un personaggio è personaggio secondario di un videogioco</rdfs:comment>
+        <rdfs:label xml:lang="it">è personaggio secondario di</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#isVillain -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/giochi#isVillain">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/giochi#Villain"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/giochi#Videogioco"/>
+        <rdfs:comment xml:lang="it">un personaggio è personaggio villain di un videogioco</rdfs:comment>
+        <rdfs:label xml:lang="it">è villain di</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#lavoraDa -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/giochi#lavoraDa">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/giochi#Sviluppatore"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/giochi#SoftwareHouse"/>
+        <rdfs:comment xml:lang="it">uno sviluppatore lavora presso una softare house</rdfs:comment>
+        <rdfs:label xml:lang="it">lavora da</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#lavoraPer -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/giochi#lavoraPer">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:comment xml:lang="it">una persona lavora per un&apos;altra persona</rdfs:comment>
+        <rdfs:label xml:lang="it">lavora per</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#produceConsole -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/giochi#produceConsole">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/giochi#CasaProduttriceConsole"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/giochi#Console"/>
+        <rdfs:comment xml:lang="it">una casa produttrice produce una console</rdfs:comment>
+        <rdfs:label xml:lang="it">produce console</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#produceGiocoDaTavolo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/giochi#produceGiocoDaTavolo">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/giochi#CasaProduttriceGiocoDaTavolo"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/giochi#GiocoDaTavolo"/>
+        <rdfs:comment xml:lang="it">una casa produttrice produce un gioco da tavolo</rdfs:comment>
+        <rdfs:label xml:lang="it">produce gioco da tavolo</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#producePcGaming -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/giochi#producePcGaming">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/giochi#CasaProduttricePC"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/giochi#ComputerDaGaming"/>
+        <rdfs:comment xml:lang="it">una casa produttrice produce un pc da gaming</rdfs:comment>
+        <rdfs:label xml:lang="it">produce PC da gaming</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#produceVideogioco -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/giochi#produceVideogioco">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/giochi#SoftwareHouse"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/giochi#Videogioco"/>
+        <rdfs:comment xml:lang="it">una software house produce un videogioco</rdfs:comment>
+        <rdfs:label xml:lang="it">produce videogioco</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#ubicataIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/giochi#ubicataIn">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/giochi#Azienda"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/giochi#Citta"/>
+        <rdfs:comment xml:lang="it">una azienda è ubicata in una città</rdfs:comment>
+        <rdfs:label xml:lang="it">è ubicata in</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#AnnoNascitaPersona -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/giochi#AnnoNascitaPersona">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/giochi#Data"/>
+        <rdfs:comment xml:lang="it">data relativo all&apos;anno di nascita di una persona</rdfs:comment>
+        <rdfs:label xml:lang="it">Anno di nascita di</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#AnnoUscita -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/giochi#AnnoUscita">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/giochi#Data"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/giochi#Gioco"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/giochi#Piattaforma"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:comment xml:lang="it">data di uscita di un gioco</rdfs:comment>
+        <rdfs:label xml:lang="it">Uscita nel</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#Data -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/giochi#Data">
+        <rdfs:comment xml:lang="it">Data generica</rdfs:comment>
+        <rdfs:label xml:lang="it">Data</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#FondataNel -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/giochi#FondataNel">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/giochi#Data"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/giochi#CasaProduttrice"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/giochi#SoftwareHouse"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment xml:lang="it">data relativa alla fondazione di una Azienda</rdfs:comment>
+        <rdfs:label xml:lang="it">Fondata nel</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#Modalita -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/giochi#Modalita">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/giochi#Gioco"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="it">modalità di gioco</rdfs:comment>
+        <rdfs:label xml:lang="it">Modalita</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#Nome -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/giochi#Nome">
+        <rdfs:comment xml:lang="it">nome generico</rdfs:comment>
+        <rdfs:label xml:lang="it">Nome</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#NomeCasaProduttrice -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/giochi#NomeCasaProduttrice">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/giochi#Nome"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/giochi#CasaProduttriceConsole"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/giochi#CasaProduttriceGiocoDaTavolo"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/giochi#CasaProduttricePC"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="it">nome di una casa produttrice</rdfs:comment>
+        <rdfs:label xml:lang="it">Nome casa produttrice</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#NomeCitta -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/giochi#NomeCitta">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/giochi#Nome"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="it">nome di una città</rdfs:comment>
+        <rdfs:label xml:lang="it">Nome città</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#NomeConsole -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/giochi#NomeConsole">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/giochi#Nome"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="it">nome di una console</rdfs:comment>
+        <rdfs:label xml:lang="it">Nome console</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#NomeGenere -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/giochi#NomeGenere">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/giochi#Nome"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="it">nome del genere del gioco</rdfs:comment>
+        <rdfs:label xml:lang="it">Nome genere</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#NomePcGaming -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/giochi#NomePcGaming">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/giochi#Nome"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="it">nome del PC da gaming</rdfs:comment>
+        <rdfs:label xml:lang="it">Nome PC da Gaming</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#NomePersona -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/giochi#NomePersona">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/giochi#Nome"/>
+        <rdfs:comment xml:lang="it">nome di una persona</rdfs:comment>
+        <rdfs:label xml:lang="it">Nome della persona</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#NomePersonaggio -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/giochi#NomePersonaggio">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/giochi#Nome"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="it">nome di un Personaggio</rdfs:comment>
+        <rdfs:label xml:lang="it">Nome del personaggio</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#NomeSoftwareHouse -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/giochi#NomeSoftwareHouse">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/giochi#Nome"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/giochi#SoftwareHouse"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="it">nome di una Software House</rdfs:comment>
+        <rdfs:label xml:lang="it">Nome della Software House</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#Portabilita -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/giochi#Portabilita">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/giochi#Piattaforma"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#TipoDifficolta -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/giochi#TipoDifficolta">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="it">tipo di difficoltà di un gioco</rdfs:comment>
+        <rdfs:label xml:lang="it">Tipo di difficoltà</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#Titolo -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/giochi#Titolo">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/giochi#Gioco"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="it">titolo di un gioco</rdfs:comment>
+        <rdfs:label xml:lang="it">Titolo</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/net/VideoGameOntology#Genre -->
+
+    <owl:Class rdf:about="http://purl.org/net/VideoGameOntology#Genre">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/giochi#Avventura"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/giochi#Picchiaduro"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/giochi#RPG"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/giochi#Rompicapo"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment xml:lang="it">Entita per descrivere il genere del gioco</rdfs:comment>
+        <rdfs:label xml:lang="it">Genere</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Bag -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Bag"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item"/>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#AltraCitta -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/giochi#AltraCitta">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/giochi#Citta"/>
+        <rdfs:comment xml:lang="it">Città generica dove è ubicata una casa produttrice</rdfs:comment>
+        <rdfs:label xml:lang="it">Altra Citta</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#Autore -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/giochi#Autore">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/giochi#isAutoreDi"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/giochi#Gioco"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/giochi#Disegnatore"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/giochi#Ideatore"/>
+        </owl:disjointUnionOf>
+        <rdfs:comment xml:lang="it">Entita per descrivere un autore di un gioco o videogioco</rdfs:comment>
+        <rdfs:label xml:lang="it">Autore</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#Azienda -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/giochi#Azienda">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/giochi#ubicataIn"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/giochi#Citta"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:comment xml:lang="it">Entita per descrivere una azienda produttrice di console, giochi e videogiochi</rdfs:comment>
+        <rdfs:label xml:lang="it">Azienda</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#CEO -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/giochi#CEO">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/giochi#isCeoDi"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/giochi#Azienda"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/giochi#CEOCasaProduttrice"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/giochi#CEOSoftwareHouse"/>
+        </owl:disjointUnionOf>
+        <rdfs:comment xml:lang="it">CEO di una Azienda</rdfs:comment>
+        <rdfs:label xml:lang="it">CEO</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#CEOCasaProduttrice -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/giochi#CEOCasaProduttrice">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/giochi#CEO"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/giochi#CEOSoftwareHouse"/>
+        <rdfs:comment xml:lang="it">CEO di una casa produttrice</rdfs:comment>
+        <rdfs:label xml:lang="it">CEO Casa Produttrice</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#CEOSoftwareHouse -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/giochi#CEOSoftwareHouse">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/giochi#CEO"/>
+        <rdfs:comment xml:lang="it">CEO di una Software House</rdfs:comment>
+        <rdfs:label xml:lang="it">CEO Software House</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#CPU -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/giochi#CPU">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/giochi#PezziPC"/>
+        <rdfs:comment xml:lang="it">Processore del PC da gaming</rdfs:comment>
+        <rdfs:label xml:lang="it">CPU</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#CasaProduttrice -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/giochi#CasaProduttrice">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/giochi#Azienda"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/giochi#SoftwareHouse"/>
+        <rdfs:comment xml:lang="it">Casa produttrice di un gioco o console</rdfs:comment>
+        <rdfs:label xml:lang="it">Casa Produttrice</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#CasaProduttriceConsole -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/giochi#CasaProduttriceConsole">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/giochi#produceConsole"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/giochi#Console"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/giochi#CasaProduttrice"/>
+        <rdfs:comment xml:lang="it">Descrive una casa produttrice di Console</rdfs:comment>
+        <rdfs:label xml:lang="it">Casa Produttrice Console</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#CasaProduttriceGiocoDaTavolo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/giochi#CasaProduttriceGiocoDaTavolo">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/giochi#produceGiocoDaTavolo"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/giochi#GiocoDaTavolo"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/giochi#CasaProduttrice"/>
+        <rdfs:comment xml:lang="it">Descrive una casa produttrice di Giochi da Tavolo</rdfs:comment>
+        <rdfs:label xml:lang="it">Casa Produttrice Di Giochi Da Tavolo</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#CasaProduttricePC -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/giochi#CasaProduttricePC">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/giochi#producePcGaming"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/giochi#ComputerDaGaming"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/giochi#CasaProduttrice"/>
+        <rdfs:comment xml:lang="it">Descrive la casa produttrice di un pc da gaming</rdfs:comment>
+        <rdfs:label xml:lang="it">Casa Produttrice PC</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#Citta -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/giochi#Citta">
+        <rdfs:comment xml:lang="it">Entita per descrivere la città dove è ubicata una azienda</rdfs:comment>
+        <rdfs:label xml:lang="it">Citta</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#CittaAmericana -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/giochi#CittaAmericana">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/giochi#Citta"/>
+        <rdfs:comment xml:lang="it">Città americana dove è ubicata una casa produttrice</rdfs:comment>
+        <rdfs:label xml:lang="it">Citta Americana</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#CittaGiapponese -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/giochi#CittaGiapponese">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/giochi#Citta"/>
+        <rdfs:comment xml:lang="it">Città giapponese dove è ubicata una casa produttrice</rdfs:comment>
+        <rdfs:label xml:lang="it">CittaGiapponese</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#ComputerDaGaming -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/giochi#ComputerDaGaming">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/giochi#compostoDa"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/giochi#Lista_Pezzi_PC"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/giochi#haCasaProduttricePcGaming"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/giochi#CasaProduttricePC"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/giochi#Piattaforma"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/giochi#Console"/>
+        <rdfs:comment xml:lang="it">Computer specifico per giocare ai videogiochi</rdfs:comment>
+        <rdfs:label xml:lang="it">Computer Da Gaming</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#Console -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/giochi#Console">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/giochi#haPortabilita"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/giochi#Portabilita"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/giochi#haCasaProduttriceConsole"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/giochi#CasaProduttriceConsole"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/giochi#Piattaforma"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/giochi#haCasaProduttriceConsole"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/giochi#CasaProduttriceConsole"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="it">Console con cui giocare un videogioco</rdfs:comment>
+        <rdfs:label xml:lang="it">Console</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#Difficolta -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/giochi#Difficolta">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/giochi#Difficile"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/giochi#Facile"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/giochi#Medio"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment xml:lang="it">Entita per descrivere la difficolta del gioco</rdfs:comment>
+        <rdfs:label xml:lang="it">Difficolta</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#Disegnatore -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/giochi#Disegnatore">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/giochi#Autore"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/giochi#Ideatore"/>
+        <rdfs:comment xml:lang="it">Entita per descrive il disegnatore di un gioco</rdfs:comment>
+        <rdfs:label xml:lang="it">Disegnatore</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#GPU -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/giochi#GPU">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/giochi#PezziPC"/>
+        <rdfs:comment xml:lang="it">Scheda grafica del PC da gaming</rdfs:comment>
+        <rdfs:label xml:lang="it">GPU</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#Gioco -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/giochi#Gioco">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/giochi#haDifficolta"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/giochi#Difficolta"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/giochi#haModalita"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/giochi#ModalitaDiGioco"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:comment xml:lang="it">Entita per descrivere un gioco</rdfs:comment>
+        <rdfs:label xml:lang="it">Gioco</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#GiocoDaTavolo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/giochi#GiocoDaTavolo">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/giochi#haCasaProduttriceGiocoDaTavolo"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/giochi#CasaProduttriceGiocoDaTavolo"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/giochi#Gioco"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/giochi#Videogioco"/>
+        <rdfs:comment xml:lang="it">Un&apos;entita per descrivere un gioco da tavolo</rdfs:comment>
+        <rdfs:label xml:lang="it">Gioco Da Tavolo</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#Ideatore -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/giochi#Ideatore">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/giochi#Autore"/>
+        <rdfs:comment xml:lang="it">Entita per descrivere l&apos;ideatore di un gioco</rdfs:comment>
+        <rdfs:label xml:lang="it">Ideatore</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#Lista_Pezzi_PC -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/giochi#Lista_Pezzi_PC">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#List"/>
+        <rdfs:comment xml:lang="it">Lista contenente i pezzi hardware che compongono un PC da gaming</rdfs:comment>
+        <rdfs:label xml:lang="it">Collection Pezzi PC</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#ModalitaDiGioco -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/giochi#ModalitaDiGioco">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/giochi#MultiPlayer"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/giochi#SinglePlayer"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment xml:lang="it">Entita per descrivere la modalita di gioco</rdfs:comment>
+        <rdfs:label xml:lang="it">Modalita Di Gioco</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#Personaggio -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/giochi#Personaggio">
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/giochi#Protagonista"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/giochi#Secondario"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/giochi#Villain"/>
+        </owl:disjointUnionOf>
+        <rdfs:comment xml:lang="it">Entita per descrivere un personaggio di un gioco</rdfs:comment>
+        <rdfs:label xml:lang="it">Personaggio</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#PezziPC -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/giochi#PezziPC">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/list.owl#ListItem"/>
+        <rdfs:comment xml:lang="it">Pezzi di un PC da gaming</rdfs:comment>
+        <rdfs:label xml:lang="it">Pezzi PC</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#Piattaforma -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/giochi#Piattaforma">
+        <rdfs:comment xml:lang="it">Entita per descrivere la piattaforma di gioco</rdfs:comment>
+        <rdfs:label xml:lang="it">Piattaforma</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#Portabilita -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/giochi#Portabilita">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/giochi#Fissa"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/giochi#Portatile"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#Protagonista -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/giochi#Protagonista">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/giochi#Personaggio"/>
+        <rdfs:comment xml:lang="it">Protagonista del gioco</rdfs:comment>
+        <rdfs:label xml:lang="it">Protagonista</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#RAM -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/giochi#RAM">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/giochi#PezziPC"/>
+        <rdfs:comment xml:lang="it">Memoria volatile del PC da gaming</rdfs:comment>
+        <rdfs:label xml:lang="it">RAM</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#ROM -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/giochi#ROM">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/giochi#PezziPC"/>
+        <rdfs:comment xml:lang="it">Memoria del PC da gaming</rdfs:comment>
+        <rdfs:label xml:lang="it">ROM</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#Secondario -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/giochi#Secondario">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/giochi#Personaggio"/>
+        <rdfs:comment xml:lang="it">Personaggio secondario di un gioco</rdfs:comment>
+        <rdfs:label xml:lang="it">Secondario</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#SoftwareHouse -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/giochi#SoftwareHouse">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/giochi#produceVideogioco"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/giochi#Videogioco"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/giochi#Azienda"/>
+        <rdfs:comment xml:lang="it">descrive la Software House che sviluppa un videogioco</rdfs:comment>
+        <rdfs:label xml:lang="it">Software House</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#Sviluppatore -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/giochi#Sviluppatore">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/giochi#lavoraDa"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/giochi#SoftwareHouse"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:comment xml:lang="it">Sviluppatore di un Videogioco</rdfs:comment>
+        <rdfs:label xml:lang="it">Sviluppatore</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#Videogioco -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/giochi#Videogioco">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/giochi#haPersonaggio"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/giochi#Personaggio"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/giochi#haPiattaforma"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/giochi#Piattaforma"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/giochi#haSoftwareHouse"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/giochi#SoftwareHouse"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/giochi#Gioco"/>
+        <rdfs:comment xml:lang="it">Un&apos;entita per descrivere un videogioco</rdfs:comment>
+        <rdfs:label xml:lang="it">Videogioco</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#Villain -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/giochi#Villain">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/giochi#Personaggio"/>
+        <rdfs:comment xml:lang="it">Villain di un Gioco</rdfs:comment>
+        <rdfs:label xml:lang="it">Villain</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Person -->
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Person">
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/giochi#Autore"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/giochi#CEO"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/giochi#Sviluppatore"/>
+        </owl:disjointUnionOf>
+        <rdfs:comment xml:lang="it">Entita per descrivere una persona</rdfs:comment>
+        <rdfs:label xml:lang="it">Persona</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#AaronGarbut -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/giochi#AaronGarbut">
+        <rdf:type rdf:resource="http://www.semanticweb.org/giochi#Ideatore"/>
+        <giochi:isAutoreDi rdf:resource="http://www.semanticweb.org/giochi#RedDeadRedemption2"/>
+        <giochi:NomePersona>Aaron Garbut</giochi:NomePersona>
+        <rdfs:comment xml:lang="it">Autore di Red Dead Redemption 2</rdfs:comment>
+        <rdfs:label xml:lang="it">Aaron Garbut</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#AlbertLamorisse -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/giochi#AlbertLamorisse">
+        <rdf:type rdf:resource="http://www.semanticweb.org/giochi#Ideatore"/>
+        <giochi:isAutoreDi rdf:resource="http://www.semanticweb.org/giochi#Risiko"/>
+        <giochi:AnnoNascitaPersona rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1922</giochi:AnnoNascitaPersona>
+        <giochi:NomePersona>Albert Lamorisse</giochi:NomePersona>
+        <rdfs:comment xml:lang="it">Creatore di Risiko</rdfs:comment>
+        <rdfs:label xml:lang="it">Albert Lamorisse</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#Avventura -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/giochi#Avventura">
+        <rdf:type rdf:resource="http://purl.org/net/VideoGameOntology#Genre"/>
+        <rdfs:comment xml:lang="it">genere di un gioco</rdfs:comment>
+        <rdfs:label xml:lang="it">Avventura</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#Burbank -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/giochi#Burbank">
+        <rdf:type rdf:resource="http://www.semanticweb.org/giochi#CittaAmericana"/>
+        <giochi:NomeCitta>Burbank</giochi:NomeCitta>
+        <rdfs:comment xml:lang="it">Citta americana</rdfs:comment>
+        <rdfs:label xml:lang="it">Burbank</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#Difficile -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/giochi#Difficile">
+        <rdf:type rdf:resource="http://www.semanticweb.org/giochi#Difficolta"/>
+        <rdfs:comment xml:lang="it">difficoltà di un gioco</rdfs:comment>
+        <rdfs:label xml:lang="it">Difficile</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#Facile -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/giochi#Facile">
+        <rdf:type rdf:resource="http://www.semanticweb.org/giochi#Difficolta"/>
+        <rdfs:comment xml:lang="it">difficoltà di un gioco</rdfs:comment>
+        <rdfs:label xml:lang="it">Facile</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#Fissa -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/giochi#Fissa">
+        <rdfs:comment xml:lang="it">portabilità di una console</rdfs:comment>
+        <rdfs:label xml:lang="it">Fissa</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#Florian -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/giochi#Florian">
+        <rdf:type rdf:resource="http://www.semanticweb.org/giochi#Protagonista"/>
+        <giochi:isProtagonista rdf:resource="http://www.semanticweb.org/giochi#PokemonScarlatto"/>
+        <giochi:NomePersonaggio>Florian</giochi:NomePersonaggio>
+        <rdfs:comment xml:lang="it">personaggio di Pokemon Scarlatto</rdfs:comment>
+        <rdfs:label xml:lang="it">Florian</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#GameFreak -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/giochi#GameFreak">
+        <rdf:type rdf:resource="http://www.semanticweb.org/giochi#SoftwareHouse"/>
+        <giochi:produceVideogioco rdf:resource="http://www.semanticweb.org/giochi#PokemonScarlatto"/>
+        <giochi:ubicataIn rdf:resource="http://www.semanticweb.org/giochi#Tokyo"/>
+        <giochi:FondataNel rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1989</giochi:FondataNel>
+        <giochi:NomeSoftwareHouse>Game Freak</giochi:NomeSoftwareHouse>
+        <rdfs:comment xml:lang="it">Software House di Pokemon Scarlatto</rdfs:comment>
+        <rdfs:label xml:lang="it">Game Freak</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#GeForce -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/giochi#GeForce">
+        <rdf:type rdf:resource="http://www.semanticweb.org/giochi#GPU"/>
+        <bag:itemOf rdf:resource="http://www.semanticweb.org/giochi#PezziOMEN45L"/>
+        <rdfs:comment xml:lang="it">Pezzo di OMEN45L</rdfs:comment>
+        <rdfs:label xml:lang="it">GeForce</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#HP -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/giochi#HP">
+        <rdf:type rdf:resource="http://www.semanticweb.org/giochi#CasaProduttricePC"/>
+        <giochi:producePcGaming rdf:resource="http://www.semanticweb.org/giochi#OMEN45L"/>
+        <giochi:ubicataIn rdf:resource="http://www.semanticweb.org/giochi#PaloAlto"/>
+        <giochi:FondataNel rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1939</giochi:FondataNel>
+        <giochi:NomeCasaProduttrice>Hewlett Packard</giochi:NomeCasaProduttrice>
+        <rdfs:comment xml:lang="it">casa produttrice di OMEN45L</rdfs:comment>
+        <rdfs:label xml:lang="it">HP</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#ImranSarwar -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/giochi#ImranSarwar">
+        <rdf:type rdf:resource="http://www.semanticweb.org/giochi#Disegnatore"/>
+        <giochi:isAutoreDi rdf:resource="http://www.semanticweb.org/giochi#RedDeadRedemption2"/>
+        <giochi:NomePersona>Imran Sarwar</giochi:NomePersona>
+        <rdfs:comment xml:lang="it">Disegnatore di Red Dead Redemption 2</rdfs:comment>
+        <rdfs:label xml:lang="it">Imran Sarwar</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#Insomniac -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/giochi#Insomniac">
+        <rdf:type rdf:resource="http://www.semanticweb.org/giochi#SoftwareHouse"/>
+        <giochi:produceVideogioco rdf:resource="http://www.semanticweb.org/giochi#SpiderMan"/>
+        <giochi:ubicataIn rdf:resource="http://www.semanticweb.org/giochi#Burbank"/>
+        <giochi:FondataNel rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1994</giochi:FondataNel>
+        <giochi:NomeSoftwareHouse>Insomnic Games</giochi:NomeSoftwareHouse>
+        <rdfs:comment xml:lang="it">Software House di Spider-Man</rdfs:comment>
+        <rdfs:label xml:lang="it">Insomniac</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#IntelCorei7 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/giochi#IntelCorei7">
+        <rdf:type rdf:resource="http://www.semanticweb.org/giochi#CPU"/>
+        <bag:itemOf rdf:resource="http://www.semanticweb.org/giochi#PezziOMEN45L"/>
+        <rdfs:comment xml:lang="it">Pezzo di OMEN45L</rdfs:comment>
+        <rdfs:label xml:lang="it">Intel Core i7</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#JamesTurner -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/giochi#JamesTurner">
+        <rdf:type rdf:resource="http://www.semanticweb.org/giochi#Sviluppatore"/>
+        <giochi:lavoraDa rdf:resource="http://www.semanticweb.org/giochi#GameFreak"/>
+        <giochi:AnnoNascitaPersona rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1978</giochi:AnnoNascitaPersona>
+        <giochi:NomePersona>James Turner</giochi:NomePersona>
+        <rdfs:comment xml:lang="it">Sviluppatore di Pokemon Scarlatto</rdfs:comment>
+        <rdfs:label xml:lang="it">James Turner</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#JoeValenzuela -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/giochi#JoeValenzuela">
+        <rdf:type rdf:resource="http://www.semanticweb.org/giochi#Sviluppatore"/>
+        <giochi:lavoraDa rdf:resource="http://www.semanticweb.org/giochi#Insomniac"/>
+        <giochi:AnnoNascitaPersona rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1970</giochi:AnnoNascitaPersona>
+        <giochi:NomePersona>Joe Valenzuela</giochi:NomePersona>
+        <rdfs:comment xml:lang="it">Sviluppatore di Spider-Man</rdfs:comment>
+        <rdfs:label xml:lang="it">Joe Valenzuela</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#JunichiMasuda -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/giochi#JunichiMasuda">
+        <rdf:type rdf:resource="http://www.semanticweb.org/giochi#CEOSoftwareHouse"/>
+        <giochi:isCeoDi rdf:resource="http://www.semanticweb.org/giochi#GameFreak"/>
+        <giochi:AnnoNascitaPersona rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1968</giochi:AnnoNascitaPersona>
+        <giochi:NomePersona>Junichi Masuda</giochi:NomePersona>
+        <rdfs:comment xml:lang="it">CEO di Game Freak</rdfs:comment>
+        <rdfs:label xml:lang="it">Junichi Masuda</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#KenSugimori -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/giochi#KenSugimori">
+        <rdf:type rdf:resource="http://www.semanticweb.org/giochi#Disegnatore"/>
+        <giochi:isAutoreDi rdf:resource="http://www.semanticweb.org/giochi#PokemonScarlatto"/>
+        <giochi:AnnoNascitaPersona rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1965</giochi:AnnoNascitaPersona>
+        <giochi:NomePersona>Ken Sugimori</giochi:NomePersona>
+        <rdfs:comment xml:lang="it">Disegnatore di Pokemon Scarlatto</rdfs:comment>
+        <rdfs:label xml:lang="it">Ken Sugimori</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#KenichiroYoshida -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/giochi#KenichiroYoshida">
+        <rdf:type rdf:resource="http://www.semanticweb.org/giochi#CEOCasaProduttrice"/>
+        <giochi:isCeoDi rdf:resource="http://www.semanticweb.org/giochi#Sony"/>
+        <giochi:AnnoNascitaPersona rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1958</giochi:AnnoNascitaPersona>
+        <giochi:NomePersona>Kenichiro Yoshida</giochi:NomePersona>
+        <rdfs:comment xml:lang="it">CEO di Sony</rdfs:comment>
+        <rdfs:label xml:lang="it">Kenichiro Yoshida</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#KingstonFury -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/giochi#KingstonFury">
+        <rdf:type rdf:resource="http://www.semanticweb.org/giochi#RAM"/>
+        <bag:itemOf rdf:resource="http://www.semanticweb.org/giochi#PezziOMEN45L"/>
+        <rdfs:comment xml:lang="it">Pezzo OMEN45L</rdfs:comment>
+        <rdfs:label xml:lang="it">Kingston Fury</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#Kyoto -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/giochi#Kyoto">
+        <rdf:type rdf:resource="http://www.semanticweb.org/giochi#CittaGiapponese"/>
+        <giochi:NomeCitta>Kyoto</giochi:NomeCitta>
+        <rdfs:comment xml:lang="it">Citta Giapponese</rdfs:comment>
+        <rdfs:label xml:lang="it">Kyoto</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#MaxRangel -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/giochi#MaxRangel">
+        <rdf:type rdf:resource="http://www.semanticweb.org/giochi#CEOCasaProduttrice"/>
+        <giochi:isCeoDi rdf:resource="http://www.semanticweb.org/giochi#SpinMaster"/>
+        <giochi:AnnoNascitaPersona rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1970</giochi:AnnoNascitaPersona>
+        <giochi:NomePersona>Max Rangel</giochi:NomePersona>
+        <rdfs:comment xml:lang="it">CEO di Spin Master</rdfs:comment>
+        <rdfs:label xml:lang="it">Max Rangel</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#Medio -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/giochi#Medio">
+        <rdf:type rdf:resource="http://www.semanticweb.org/giochi#Difficolta"/>
+        <rdfs:comment xml:lang="it">Difficolta di un gioco</rdfs:comment>
+        <rdfs:label xml:lang="it">Medio</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#Microsoft -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/giochi#Microsoft">
+        <rdf:type rdf:resource="http://www.semanticweb.org/giochi#CasaProduttriceConsole"/>
+        <giochi:produceConsole rdf:resource="http://www.semanticweb.org/giochi#XboxX"/>
+        <giochi:ubicataIn rdf:resource="http://www.semanticweb.org/giochi#Redmond"/>
+        <giochi:FondataNel rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1981</giochi:FondataNel>
+        <giochi:NomeCasaProduttrice>Microsoft Corporation</giochi:NomeCasaProduttrice>
+        <rdfs:comment xml:lang="it">Casa Produttrice di Xbox Series X</rdfs:comment>
+        <rdfs:label xml:lang="it">Microsoft</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#MultiPlayer -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/giochi#MultiPlayer">
+        <rdfs:comment xml:lang="it">Modalità di gioco</rdfs:comment>
+        <rdfs:label xml:lang="it">Multi-Player</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#Nemi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/giochi#Nemi">
+        <rdf:type rdf:resource="http://www.semanticweb.org/giochi#Secondario"/>
+        <giochi:isSecondario rdf:resource="http://www.semanticweb.org/giochi#PokemonScarlatto"/>
+        <giochi:NomePersonaggio>Nemi</giochi:NomePersonaggio>
+        <rdfs:comment xml:lang="it">Personaggio di Pokemon Scarlatto</rdfs:comment>
+        <rdfs:label xml:lang="it">Nemi</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#NewYork -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/giochi#NewYork">
+        <rdf:type rdf:resource="http://www.semanticweb.org/giochi#CittaAmericana"/>
+        <giochi:NomeCitta>New York</giochi:NomeCitta>
+        <rdfs:comment xml:lang="it">Città americana</rdfs:comment>
+        <rdfs:label xml:lang="it">New York</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#Nintendo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/giochi#Nintendo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/giochi#CasaProduttriceConsole"/>
+        <giochi:produceConsole rdf:resource="http://www.semanticweb.org/giochi#Switch"/>
+        <giochi:ubicataIn rdf:resource="http://www.semanticweb.org/giochi#Kyoto"/>
+        <giochi:FondataNel rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1889</giochi:FondataNel>
+        <giochi:NomeCasaProduttrice>Nintendo Inc.</giochi:NomeCasaProduttrice>
+        <rdfs:comment xml:lang="it">Casa produttrice di console Nintendo Switch</rdfs:comment>
+        <rdfs:label xml:lang="it">Nintendo</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#OMEN45L -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/giochi#OMEN45L">
+        <rdf:type rdf:resource="http://www.semanticweb.org/giochi#ComputerDaGaming"/>
+        <giochi:compostoDa rdf:resource="http://www.semanticweb.org/giochi#PezziOMEN45L"/>
+        <giochi:haCasaProduttricePcGaming rdf:resource="http://www.semanticweb.org/giochi#HP"/>
+        <giochi:AnnoUscita rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2020</giochi:AnnoUscita>
+        <giochi:NomePcGaming>HP Omen 45 L</giochi:NomePcGaming>
+        <rdfs:comment xml:lang="it">PC da Gaming</rdfs:comment>
+        <rdfs:label xml:lang="it">OMEN45L</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#Olim -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/giochi#Olim">
+        <rdf:type rdf:resource="http://www.semanticweb.org/giochi#Villain"/>
+        <giochi:isVillain rdf:resource="http://www.semanticweb.org/giochi#PokemonScarlatto"/>
+        <giochi:NomePersonaggio>Olim</giochi:NomePersonaggio>
+        <rdfs:comment xml:lang="it">personaggio di Pokemon Scarlatto</rdfs:comment>
+        <rdfs:label xml:lang="it">Olim</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#Ottawa -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/giochi#Ottawa">
+        <rdf:type rdf:resource="http://www.semanticweb.org/giochi#AltraCitta"/>
+        <giochi:NomeCitta>Ottawa</giochi:NomeCitta>
+        <rdfs:comment xml:lang="it">Città Canadese</rdfs:comment>
+        <rdfs:label xml:lang="it">Ottawa</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#PS5 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/giochi#PS5">
+        <rdf:type rdf:resource="http://www.semanticweb.org/giochi#Console"/>
+        <giochi:haCasaProduttriceConsole rdf:resource="http://www.semanticweb.org/giochi#Sony"/>
+        <giochi:AnnoUscita rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2020</giochi:AnnoUscita>
+        <giochi:NomeConsole>PlayStation 5</giochi:NomeConsole>
+        <rdfs:comment xml:lang="it">Console prodotta da Sony</rdfs:comment>
+        <rdfs:label xml:lang="it">PlayStation 5</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#PaloAlto -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/giochi#PaloAlto">
+        <rdf:type rdf:resource="http://www.semanticweb.org/giochi#CittaAmericana"/>
+        <giochi:NomeCitta>Palo Alto</giochi:NomeCitta>
+        <rdfs:comment xml:lang="it">Città americana</rdfs:comment>
+        <rdfs:label xml:lang="it">Palo Alto</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#PezziOMEN45L -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/giochi#PezziOMEN45L">
+        <rdfs:comment xml:lang="it">Collection di pezzi PC OMEN45L</rdfs:comment>
+        <rdfs:label xml:lang="it">Pezzi OMEN45L</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#PhilHooker -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/giochi#PhilHooker">
+        <rdf:type rdf:resource="http://www.semanticweb.org/giochi#Sviluppatore"/>
+        <giochi:lavoraDa rdf:resource="http://www.semanticweb.org/giochi#Rockstar"/>
+        <giochi:NomePersona>Phil Hooker</giochi:NomePersona>
+        <rdfs:comment xml:lang="it">Sviluppatore di Red Dead Redemption 2</rdfs:comment>
+        <rdfs:label xml:lang="it">Phil Hooker</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#Picchiaduro -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/giochi#Picchiaduro">
+        <rdf:type rdf:resource="http://purl.org/net/VideoGameOntology#Genre"/>
+        <rdfs:comment xml:lang="it">genere di un gioco</rdfs:comment>
+        <rdfs:label xml:lang="it">Picchiaduro</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#PokemonScarlatto -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/giochi#PokemonScarlatto">
+        <rdf:type rdf:resource="http://www.semanticweb.org/giochi#Videogioco"/>
+        <giochi:haDifficolta rdf:resource="http://www.semanticweb.org/giochi#Facile"/>
+        <giochi:haGenere rdf:resource="http://www.semanticweb.org/giochi#RPG"/>
+        <giochi:haPersonaggio rdf:resource="http://www.semanticweb.org/giochi#Florian"/>
+        <giochi:haPersonaggio rdf:resource="http://www.semanticweb.org/giochi#Nemi"/>
+        <giochi:haPersonaggio rdf:resource="http://www.semanticweb.org/giochi#Olim"/>
+        <giochi:haPiattaforma rdf:resource="http://www.semanticweb.org/giochi#Switch"/>
+        <giochi:haSoftwareHouse rdf:resource="http://www.semanticweb.org/giochi#GameFreak"/>
+        <giochi:AnnoUscita rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2022</giochi:AnnoUscita>
+        <giochi:Titolo>Pokémon Scarlatto</giochi:Titolo>
+        <rdfs:comment xml:lang="it">Videogioco sviluppato da Game Freak</rdfs:comment>
+        <rdfs:label xml:lang="it">Pokemon Scarlatto</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#Portatile -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/giochi#Portatile">
+        <rdfs:comment xml:lang="it">Portabilità di una console</rdfs:comment>
+        <rdfs:label xml:lang="it">Portatile</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#RPG -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/giochi#RPG">
+        <rdf:type rdf:resource="http://purl.org/net/VideoGameOntology#Genre"/>
+        <rdfs:comment xml:lang="it">genere di un videogioco</rdfs:comment>
+        <rdfs:label xml:lang="it">RPG</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#RedDeadRedemption2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/giochi#RedDeadRedemption2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/giochi#Videogioco"/>
+        <giochi:haDifficolta rdf:resource="http://www.semanticweb.org/giochi#Difficile"/>
+        <giochi:haGenere rdf:resource="http://www.semanticweb.org/giochi#Avventura"/>
+        <giochi:haPiattaforma rdf:resource="http://www.semanticweb.org/giochi#OMEN45L"/>
+        <giochi:haPiattaforma rdf:resource="http://www.semanticweb.org/giochi#PS5"/>
+        <giochi:haPiattaforma rdf:resource="http://www.semanticweb.org/giochi#XboxX"/>
+        <giochi:haSoftwareHouse rdf:resource="http://www.semanticweb.org/giochi#Rockstar"/>
+        <giochi:AnnoUscita rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2018</giochi:AnnoUscita>
+        <giochi:Titolo>Red Dead Redemption 2</giochi:Titolo>
+        <rdfs:comment xml:lang="it">Videogioco sviluppato da Rockstar</rdfs:comment>
+        <rdfs:label xml:lang="it">Red Dead Redemption 2</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#Redmond -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/giochi#Redmond">
+        <rdf:type rdf:resource="http://www.semanticweb.org/giochi#CittaAmericana"/>
+        <giochi:NomeCitta>Redmond</giochi:NomeCitta>
+        <rdfs:comment xml:lang="it">Città americana</rdfs:comment>
+        <rdfs:label xml:lang="it">Redmond</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#Risiko -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/giochi#Risiko">
+        <rdf:type rdf:resource="http://www.semanticweb.org/giochi#GiocoDaTavolo"/>
+        <giochi:haCasaProduttriceGiocoDaTavolo rdf:resource="http://www.semanticweb.org/giochi#SpinMaster"/>
+        <giochi:haDifficolta rdf:resource="http://www.semanticweb.org/giochi#Difficile"/>
+        <giochi:haGenere rdf:resource="http://www.semanticweb.org/giochi#Rompicapo"/>
+        <giochi:AnnoUscita rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1968</giochi:AnnoUscita>
+        <giochi:Titolo>Risiko</giochi:Titolo>
+        <rdfs:comment xml:lang="it">gioco da tavolo prodotto da Spin Master</rdfs:comment>
+        <rdfs:label xml:lang="it">Risiko</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#Rockstar -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/giochi#Rockstar">
+        <rdf:type rdf:resource="http://www.semanticweb.org/giochi#SoftwareHouse"/>
+        <giochi:produceVideogioco rdf:resource="http://www.semanticweb.org/giochi#RedDeadRedemption2"/>
+        <giochi:ubicataIn rdf:resource="http://www.semanticweb.org/giochi#NewYork"/>
+        <giochi:FondataNel rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1998</giochi:FondataNel>
+        <giochi:NomeSoftwareHouse>Rockstar Games</giochi:NomeSoftwareHouse>
+        <rdfs:comment xml:lang="it">Software House che produce il gioco Red Dead Redemption 2</rdfs:comment>
+        <rdfs:label xml:lang="it">Rockstar</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#Rompicapo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/giochi#Rompicapo">
+        <rdf:type rdf:resource="http://purl.org/net/VideoGameOntology#Genre"/>
+        <rdfs:comment xml:lang="it">genere di un videogioco</rdfs:comment>
+        <rdfs:label xml:lang="it">Rompicapo</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#SamHouser -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/giochi#SamHouser">
+        <rdf:type rdf:resource="http://www.semanticweb.org/giochi#CEOSoftwareHouse"/>
+        <giochi:isCeoDi rdf:resource="http://www.semanticweb.org/giochi#Rockstar"/>
+        <giochi:AnnoNascitaPersona rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1971</giochi:AnnoNascitaPersona>
+        <giochi:NomePersona>Sam Houser</giochi:NomePersona>
+        <rdfs:comment xml:lang="it">CEO di Rockstar</rdfs:comment>
+        <rdfs:label xml:lang="it">Sam Houser</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#SatoshiTajiri -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/giochi#SatoshiTajiri">
+        <rdf:type rdf:resource="http://www.semanticweb.org/giochi#Ideatore"/>
+        <giochi:isAutoreDi rdf:resource="http://www.semanticweb.org/giochi#PokemonScarlatto"/>
+        <giochi:AnnoNascitaPersona rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1966</giochi:AnnoNascitaPersona>
+        <giochi:NomePersona>Satoshi Tajiri</giochi:NomePersona>
+        <rdfs:comment xml:lang="it">Ideatore del giochi Pokemon Scarlatto</rdfs:comment>
+        <rdfs:label xml:lang="it">Satoshi Tajiri</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#SatyaNadella -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/giochi#SatyaNadella">
+        <rdf:type rdf:resource="http://www.semanticweb.org/giochi#CEOCasaProduttrice"/>
+        <giochi:isCeoDi rdf:resource="http://www.semanticweb.org/giochi#Microsoft"/>
+        <giochi:AnnoNascitaPersona rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1967</giochi:AnnoNascitaPersona>
+        <giochi:NomePersona>Satya Nadella</giochi:NomePersona>
+        <rdfs:comment xml:lang="it">CEO di Microsoft</rdfs:comment>
+        <rdfs:label xml:lang="it">Satya Nadella</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#ShuntaruFurukawa -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/giochi#ShuntaruFurukawa">
+        <rdf:type rdf:resource="http://www.semanticweb.org/giochi#CEOCasaProduttrice"/>
+        <giochi:isCeoDi rdf:resource="http://www.semanticweb.org/giochi#Nintendo"/>
+        <giochi:AnnoNascitaPersona rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1972</giochi:AnnoNascitaPersona>
+        <giochi:NomePersona>Shuntaro Furukawa</giochi:NomePersona>
+        <rdfs:comment xml:lang="it">CEO di Nintendo</rdfs:comment>
+        <rdfs:label xml:lang="it">Shuntaru Furukawa</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#SinglePlayer -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/giochi#SinglePlayer">
+        <rdfs:comment xml:lang="it">Modalità di gioco</rdfs:comment>
+        <rdfs:label xml:lang="it">Single-Player</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#Sony -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/giochi#Sony">
+        <rdf:type rdf:resource="http://www.semanticweb.org/giochi#CasaProduttriceConsole"/>
+        <giochi:produceConsole rdf:resource="http://www.semanticweb.org/giochi#PS5"/>
+        <giochi:ubicataIn rdf:resource="http://www.semanticweb.org/giochi#Tokyo"/>
+        <giochi:FondataNel rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1946</giochi:FondataNel>
+        <giochi:NomeCasaProduttrice>Sony Corporation</giochi:NomeCasaProduttrice>
+        <rdfs:comment xml:lang="it">Casa produttrice della console PlayStation 5</rdfs:comment>
+        <rdfs:label xml:lang="it">Sony</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#SpiderMan -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/giochi#SpiderMan">
+        <rdf:type rdf:resource="http://www.semanticweb.org/giochi#Videogioco"/>
+        <giochi:haDifficolta rdf:resource="http://www.semanticweb.org/giochi#Medio"/>
+        <giochi:haGenere rdf:resource="http://www.semanticweb.org/giochi#Picchiaduro"/>
+        <giochi:haPiattaforma rdf:resource="http://www.semanticweb.org/giochi#PS5"/>
+        <giochi:haSoftwareHouse rdf:resource="http://www.semanticweb.org/giochi#Insomniac"/>
+        <giochi:AnnoUscita rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2018</giochi:AnnoUscita>
+        <giochi:Titolo>Marvel&apos;s Spider-Man</giochi:Titolo>
+        <rdfs:comment xml:lang="it">Videogioco sviluppato da Insomniac</rdfs:comment>
+        <rdfs:label xml:lang="it">Spider-Man</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#SpinMaster -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/giochi#SpinMaster">
+        <rdf:type rdf:resource="http://www.semanticweb.org/giochi#CasaProduttriceGiocoDaTavolo"/>
+        <giochi:produceGiocoDaTavolo rdf:resource="http://www.semanticweb.org/giochi#Risiko"/>
+        <giochi:ubicataIn rdf:resource="http://www.semanticweb.org/giochi#Toronto"/>
+        <giochi:FondataNel rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1994</giochi:FondataNel>
+        <giochi:NomeCasaProduttrice>Spin Master</giochi:NomeCasaProduttrice>
+        <rdfs:comment xml:lang="it">casa produttrice del Gioco Da Tavolo Risiko</rdfs:comment>
+        <rdfs:label xml:lang="it">Spin Master</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#StanLee -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/giochi#StanLee">
+        <rdf:type rdf:resource="http://www.semanticweb.org/giochi#Ideatore"/>
+        <giochi:isAutoreDi rdf:resource="http://www.semanticweb.org/giochi#SpiderMan"/>
+        <giochi:AnnoNascitaPersona rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1922</giochi:AnnoNascitaPersona>
+        <giochi:NomePersona>Stan Lee</giochi:NomePersona>
+        <rdfs:comment xml:lang="it">Ideatore di Spider-Man</rdfs:comment>
+        <rdfs:label xml:lang="it">Stan Lee</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#SteveDitko -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/giochi#SteveDitko">
+        <rdf:type rdf:resource="http://www.semanticweb.org/giochi#Disegnatore"/>
+        <giochi:isAutoreDi rdf:resource="http://www.semanticweb.org/giochi#SpiderMan"/>
+        <giochi:AnnoNascitaPersona rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1927</giochi:AnnoNascitaPersona>
+        <giochi:NomePersona>Steve Ditko</giochi:NomePersona>
+        <rdfs:comment xml:lang="it">Disegnatore di Spider-Man</rdfs:comment>
+        <rdfs:label xml:lang="it">Steve Ditko</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#Switch -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/giochi#Switch">
+        <rdf:type rdf:resource="http://www.semanticweb.org/giochi#Console"/>
+        <giochi:haCasaProduttriceConsole rdf:resource="http://www.semanticweb.org/giochi#Nintendo"/>
+        <giochi:AnnoUscita rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2017</giochi:AnnoUscita>
+        <giochi:NomeConsole>Nintendo Switch</giochi:NomeConsole>
+        <rdfs:comment xml:lang="it">console prodotta da Nintendo</rdfs:comment>
+        <rdfs:label xml:lang="it">Nintendo Switch</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#TedPrice -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/giochi#TedPrice">
+        <rdf:type rdf:resource="http://www.semanticweb.org/giochi#CEOSoftwareHouse"/>
+        <giochi:isCeoDi rdf:resource="http://www.semanticweb.org/giochi#Insomniac"/>
+        <giochi:AnnoNascitaPersona rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1972</giochi:AnnoNascitaPersona>
+        <giochi:NomePersona>Ted Price</giochi:NomePersona>
+        <rdfs:comment xml:lang="it">CEO di Insomniac</rdfs:comment>
+        <rdfs:label xml:lang="it">Ted Price</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#Tokyo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/giochi#Tokyo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/giochi#CittaGiapponese"/>
+        <giochi:NomeCitta>Tokyo</giochi:NomeCitta>
+        <rdfs:comment xml:lang="it">Città giapponese</rdfs:comment>
+        <rdfs:label xml:lang="it">Tokyo</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#Toronto -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/giochi#Toronto">
+        <rdf:type rdf:resource="http://www.semanticweb.org/giochi#AltraCitta"/>
+        <giochi:NomeCitta>Toronto</giochi:NomeCitta>
+        <rdfs:comment xml:lang="it">Città canadese</rdfs:comment>
+        <rdfs:label xml:lang="it">Toronto</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#WDBlack -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/giochi#WDBlack">
+        <rdf:type rdf:resource="http://www.semanticweb.org/giochi#ROM"/>
+        <bag:itemOf rdf:resource="http://www.semanticweb.org/giochi#PezziOMEN45L"/>
+        <rdfs:comment xml:lang="it">Pezzo di OMEN45L</rdfs:comment>
+        <rdfs:label xml:lang="it">WD Black</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/giochi#XboxX -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/giochi#XboxX">
+        <rdf:type rdf:resource="http://www.semanticweb.org/giochi#Console"/>
+        <giochi:haCasaProduttriceConsole rdf:resource="http://www.semanticweb.org/giochi#Microsoft"/>
+        <giochi:AnnoUscita rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2020</giochi:AnnoUscita>
+        <giochi:NomeConsole>Xbox Series X</giochi:NomeConsole>
+        <rdfs:comment xml:lang="it">Console prodotta da Microsoft</rdfs:comment>
+        <rdfs:label xml:lang="it">Xbox Series X</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/giochi#Portabilita">
+        <rdfs:comment xml:lang="it">portabilita di una piattaforma</rdfs:comment>
+        <rdfs:label xml:lang="it">Portabilità</rdfs:label>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.org/net/VideoGameOntology#Genre"/>
+            <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/cp/owl/bag.owl#Item"/>
+            <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/giochi#Azienda"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/giochi#Citta"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/giochi#Difficolta"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/giochi#Gioco"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/giochi#ModalitaDiGioco"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/giochi#Personaggio"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/giochi#Piattaforma"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/giochi#Portabilita"/>
+            <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/giochi#AltraCitta"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/giochi#CittaAmericana"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/giochi#CittaGiapponese"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/giochi#CPU"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/giochi#GPU"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/giochi#RAM"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/giochi#ROM"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/giochi#CasaProduttriceConsole"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/giochi#CasaProduttriceGiocoDaTavolo"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/giochi#CasaProduttricePC"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/giochi#AaronGarbut"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/giochi#AlbertLamorisse"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/giochi#ImranSarwar"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/giochi#JamesTurner"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/giochi#JoeValenzuela"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/giochi#JunichiMasuda"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/giochi#KenSugimori"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/giochi#KenichiroYoshida"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/giochi#MaxRangel"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/giochi#PhilHooker"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/giochi#SamHouser"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/giochi#SatoshiTajiri"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/giochi#SatyaNadella"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/giochi#ShuntaruFurukawa"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/giochi#StanLee"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/giochi#SteveDitko"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/giochi#TedPrice"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/x">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/y">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/a1">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/a2">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment>Controlla che due persone hanno creato insieme un gioco</rdfs:comment>
+        <rdfs:label>CreatoreCon</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/y"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/giochi#isAutoreDi"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/x"/>
+                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/a1"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/giochi#isAutoreDi"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/y"/>
+                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/a1"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DifferentIndividualsAtom"/>
+                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/x"/>
+                                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/y"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/giochi#haCreatoGiocoCon"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/x"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment>Controlla che una persona sia a capo di un&apos;altra persona</rdfs:comment>
+        <rdfs:label>CapoDi</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/y"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/giochi#isCeoDi"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/x"/>
+                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/a1"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/giochi#lavoraDa"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/y"/>
+                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/a1"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DifferentIndividualsAtom"/>
+                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/x"/>
+                                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/y"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/giochi#isCapoDi"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/x"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment>Controlla che una persona lavora per un&apos;altra persona</rdfs:comment>
+        <rdfs:label>LavoraPer</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/y"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/giochi#lavoraDa"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/x"/>
+                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/a1"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/giochi#isCeoDi"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/y"/>
+                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/a1"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DifferentIndividualsAtom"/>
+                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/x"/>
+                                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/y"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/giochi#lavoraPer"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/x"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment>Controlla che due persone abbiano la stessa eta&apos;</rdfs:comment>
+        <rdfs:label>EtaUguale</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/y"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/giochi#AnnoNascitaPersona"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/x"/>
+                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/a1"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/giochi#AnnoNascitaPersona"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/y"/>
+                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/a2"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#equal"/>
+                                                        <swrl:arguments rdf:parseType="Collection">
+                                                            <rdf:Description rdf:about="http://www.semanticweb.org/a1"/>
+                                                            <rdf:Description rdf:about="http://www.semanticweb.org/a2"/>
+                                                        </swrl:arguments>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                        <rdf:first>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DifferentIndividualsAtom"/>
+                                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/x"/>
+                                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/y"/>
+                                                            </rdf:Description>
+                                                        </rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/giochi#haStessaEta"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/x"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment>Controlla che una persona sia piu&apos; piccola in termini di eta&apos; di un&apos;altra persona</rdfs:comment>
+        <rdfs:label>EtaMinore</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThan"/>
+                        <swrl:arguments rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/a1"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/a2"/>
+                        </swrl:arguments>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/x"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/y"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/giochi#AnnoNascitaPersona"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/x"/>
+                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/a1"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/giochi#AnnoNascitaPersona"/>
+                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/y"/>
+                                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/a2"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/giochi#haEtaMinore"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/x"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment>Controlla che una persona sia piu&apos; grande in termini di eta&apos; di un&apos;altra persona</rdfs:comment>
+        <rdfs:label>EtaMaggiore</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#lessThan"/>
+                        <swrl:arguments rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/a1"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/a2"/>
+                        </swrl:arguments>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/x"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/y"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/giochi#AnnoNascitaPersona"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/x"/>
+                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/a1"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/giochi#AnnoNascitaPersona"/>
+                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/y"/>
+                                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/a2"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/giochi#haEtaMaggiore"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/x"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi -->
+
